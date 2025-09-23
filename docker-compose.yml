@@ -5,4 +5,14 @@ services:
     build: .
     ports:
       - "3000:3000"
- 
+    volumes:
+      - pnp-volume:/web/logs
+    networks:
+      - pnp-network
+
+volumes:
+  pnp-volume:
+
+networks:
+  pnp-network:
+    driver: bridge
